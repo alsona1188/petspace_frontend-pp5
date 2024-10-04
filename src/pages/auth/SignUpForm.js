@@ -57,6 +57,7 @@ const SignUpForm = () => {
               <Form.Label className="d-none">username</Form.Label>
               <Form.Control
                 className={styles.Input}
+                autoComplete="username"
                 type="text"
                 placeholder="Username"
                 name="username"
@@ -74,6 +75,7 @@ const SignUpForm = () => {
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
                 className={styles.Input}
+                autoComplete="new-password"
                 type="password"
                 placeholder="Password"
                 name="password1"
@@ -91,6 +93,7 @@ const SignUpForm = () => {
               <Form.Label className="d-none">Confirm password</Form.Label>
               <Form.Control
                 className={styles.Input}
+                autoComplete="new-password"
                 type="password"
                 placeholder="Confirm password"
                 name="password2"
@@ -105,10 +108,10 @@ const SignUpForm = () => {
             ))}
 
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Black}`}
               type="submit"
             >
-              Sign up
+              SIGN UP
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
@@ -124,14 +127,12 @@ const SignUpForm = () => {
           </Link>
         </Container>
       </Col>
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
-      >
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={hero}
-        />
+      <Col md={6} className={`my-auto d-md-block p-2 ${styles.SignUpCol}`}>
+        <Container
+          className={`mt-3 ${appStyles.Content} ${styles.SignInUpImage}`}
+        >
+          <Image className={`${appStyles.FillerImage}`} src={hero} />
+        </Container>
       </Col>
     </Row>
   );
