@@ -14,9 +14,9 @@ const Post = (props) => {
     profile_image,
     comments_count,
     likes_count,
-    like_id,
+    like_id_post,
     title,
-    content,
+    description,
     image,
     updated_at,
     postPage,
@@ -33,7 +33,7 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            ? { ...post, likes_count: post.likes_count + 1, like_id_post: data.id }
             : post;
         }),
       }));
@@ -44,12 +44,12 @@ const Post = (props) => {
 
   const handleUnlike = async () => {
     try {
-      await axiosRes.delete(`/like_post/${like_id}/`);
+      await axiosRes.delete(`/like_post/${like_id_post}/`);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+            ? { ...post, likes_count: post.likes_count - 1, like_id_post: null }
             : post;
         }),
       }));
@@ -77,7 +77,7 @@ const Post = (props) => {
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text>{content}</Card.Text>}
+        {description && <Card.Text>{description}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
@@ -86,7 +86,7 @@ const Post = (props) => {
             >
               <i className="far fa-heart" />
             </OverlayTrigger>
-          ) : like_id ? (
+          ) : like_id_post ? (
             <span onClick={handleUnlike}>
               <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
