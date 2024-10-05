@@ -1,24 +1,51 @@
 .Post {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    text-align: center;
+  background-color: #ffffff;
+  border-radius: 15px; 
+  margin-bottom: 32px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.Post figure,
+h5 {
+  margin: 0 0;
+}
+
+.PostBar {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 8px 30px;
+  border-radius: 15px;
+  border: solid 1px #8c9bcd;
+}
+
+
+
+.Heart {
+  margin-right: 1em;
+}
+
+.Heart:hover {
+  color: #cf1c1c;
+}
+
+.Comments:hover {
+  color: #8a8a8a;
+}
+
+.Comments {
+  margin-right: 1em;
+}
+
+.Date {
+  color: #16084a;
+  font-size: .9em;
+}
+
+@media only screen and (max-width: 600px){
+  .Post {
+      margin-right: 8px;
+      margin-left: 8px;
   }
-  
-  .Post figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Heart {
-    color: #f85032;
-  }
-  
-  .Heart:hover {
-    color: #2142b2;
-  }
-  
-  .HeartOutline:hover {
-    color: #f85032;
-  }
+}
