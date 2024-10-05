@@ -42,7 +42,7 @@ function App() {
             render={() => (
               <PostsPetPage
                 message="No results found. Adjust the search keyword or like a post."
-                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                filter={`like_post__owner__profile=${profile_id}&ordering=-like_post__created_at&`}
               />
             )}
           />
