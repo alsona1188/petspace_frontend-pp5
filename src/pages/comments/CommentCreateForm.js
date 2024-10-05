@@ -10,7 +10,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
-  const [content, setContent] = useState("");
+  const [description, setContent] = useState("");
 
   const handleChange = (event) => {
     setContent(event.target.value);
@@ -20,7 +20,7 @@ function CommentCreateForm(props) {
     event.preventDefault();
     try {
       const { data } = await axiosRes.post("/comments/", {
-        content,
+        description,
         post,
       });
       setComments((prevComments) => ({
@@ -52,7 +52,7 @@ function CommentCreateForm(props) {
             className={styles.Form}
             placeholder="my comment..."
             as="textarea"
-            value={content}
+            value={description}
             onChange={handleChange}
             rows={2}
           />
@@ -60,7 +60,7 @@ function CommentCreateForm(props) {
       </Form.Group>
       <button
         className={`${styles.Button} btn d-block ml-auto`}
-        disabled={!content.trim()}
+        disabled={!description.trim()}
         type="submit"
       >
         post
