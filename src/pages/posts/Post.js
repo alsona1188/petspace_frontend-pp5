@@ -20,6 +20,7 @@ const Post = (props) => {
     description,
     image,
     updated_at,
+    category,
     postPage,
     setPosts,
   } = props;
@@ -98,6 +99,7 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {description && <Card.Text>{description}</Card.Text>}
+        {category && <Card.Text>#{category}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
