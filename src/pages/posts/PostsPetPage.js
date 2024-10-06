@@ -50,6 +50,14 @@ function PostsPetPage({ message, filter = "" }) {
 
   return (
     <Row className="h-100">
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      {/* Display PopularProfiles on larger screens */}
+        <PopularProfiles />
+      </Col>
+      {/* Display PopularProfiles on mobile */}
+      <Col className="d-lg-none mb-1 pt-3">
+        <PopularProfiles mobile />
+      </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form className={styles.SearchBar} onSubmit={(event) => event.preventDefault()}>
@@ -90,9 +98,7 @@ function PostsPetPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
+      
     </Row>
     
   );
