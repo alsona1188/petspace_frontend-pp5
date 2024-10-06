@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Media } from "react-bootstrap";
+import { Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
@@ -17,6 +17,8 @@ const Comment = (props) => {
     updated_at,
     description,
     id,
+    like_id_comment,
+    likes_count_comment,
     setPost,
     setComments,
   } = props;
@@ -24,6 +26,39 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.post("/like_comment/", { comment: id });
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.map((comment) => {
+          return comment.id === id
+            ? { ...comment, likes_count_comment: comment.likes_count_comment + 1, like_id_comment: data.id }
+            : comment;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/like_comment/${like_id_comment}/`);
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.map((comment) => {
+          return comment.id === id
+            ? { ...comment, likes_count_comment: comment.likes_count_comment - 1, like_id_comment: null }
+            : comment;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
   const handleDelete = async () => {
     try {
@@ -66,6 +101,32 @@ const Comment = (props) => {
           ) : (
             <p>{description}</p>
           )}
+          <div className={styles.PostBar}>
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>You can't like your own comment!</Tooltip>}
+            >
+              <i className="far fa-thumbs-up" />
+            </OverlayTrigger>
+          ) : like_id_comment ? (
+            <span onClick={handleUnlike}>
+              <i className={`fas fa-thumbs-up ${styles.ThumbsUp}`} />
+            </span>
+          ) : currentUser ? (
+            <span onClick={handleLike}>
+              <i className={`far fa-thumbs-up ${styles.ThumbsUpOutline}`} />
+            </span>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to like comments!</Tooltip>}
+            >
+              <i className="far fa-thumbs-up" />
+            </OverlayTrigger>
+          )}
+          {likes_count_comment}
+        </div>
         </Media.Body>
         {is_owner && !showEditForm && (
           <MoreDropdown
