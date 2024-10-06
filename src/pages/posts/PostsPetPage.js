@@ -17,6 +17,7 @@ import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import PopularPosts from "../../components/PopularPosts";
 
 
 function PostsPetPage({ message, filter = "" }) {
@@ -53,6 +54,7 @@ function PostsPetPage({ message, filter = "" }) {
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
       {/* Display PopularProfiles on larger screens */}
         <PopularProfiles />
+        <PopularPosts />
       </Col>
       {/* Display PopularProfiles on mobile */}
       <Col className="d-lg-none mb-1 pt-3">
