@@ -27,7 +27,7 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  const handleLike = async () => {
+  const handleLikeComment = async () => {
     try {
       const { data } = await axiosRes.post("/like_comment/", { comment: id });
       setComments((prevComments) => ({
@@ -43,7 +43,7 @@ const Comment = (props) => {
     }
   };
 
-  const handleUnlike = async () => {
+  const handleUnlikeComment = async () => {
     try {
       await axiosRes.delete(`/like_comment/${like_id_comment}/`);
       setComments((prevComments) => ({
@@ -110,11 +110,11 @@ const Comment = (props) => {
               <i className="far fa-thumbs-up" />
             </OverlayTrigger>
           ) : like_id_comment ? (
-            <span onClick={handleUnlike}>
+            <span onClick={handleUnlikeComment}>
               <i className={`fas fa-thumbs-up ${styles.ThumbsUp}`} />
             </span>
           ) : currentUser ? (
-            <span onClick={handleLike}>
+            <span onClick={handleLikeComment}>
               <i className={`far fa-thumbs-up ${styles.ThumbsUpOutline}`} />
             </span>
           ) : (
