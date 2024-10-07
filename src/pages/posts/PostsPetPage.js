@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-
+import { Form, Col, Row, Container } from "react-bootstrap";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import ChooseCategory from "../../components/ChooseCategory";
@@ -18,6 +13,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import PopularPosts from "../../components/PopularPosts";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 function PostsPetPage({ message, filter = "" }) {
@@ -25,7 +21,7 @@ function PostsPetPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-
+  const currentUser = useCurrentUser();
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -35,7 +31,7 @@ function PostsPetPage({ message, filter = "" }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
 
@@ -47,7 +43,7 @@ function PostsPetPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [category, filter, query, pathname]);
+  }, [category, filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
