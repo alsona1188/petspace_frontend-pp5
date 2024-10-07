@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -26,15 +26,6 @@ const NavBar = () => {
     }
   };
 
-  const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/posts/create"
-    >
-      <i className="far fa-plus-square"></i>Add post
-    </NavLink>
-  );
   const loggedInIcons = (
     <>
       <NavLink
@@ -62,6 +53,7 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
   const loggedOutIcons = (
     <>
       <NavLink
@@ -91,15 +83,34 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="70" />
+            <img src={logo} alt="logo" height="60" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+
+        {/* Dropdown with "Add Post" and "Add Category" */}
+        {currentUser && (
+          <Dropdown className={styles.addDropdown}>
+            <Dropdown.Toggle variant="link" id="dropdown-basic" className={styles.NavLink}>
+              <i className="fas fa-folder-plus"></i>Add
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item as={NavLink} to="/posts/create">
+                <i className="far fa-plus-square"></i> Add Post
+              </Dropdown.Item>
+              <Dropdown.Item as={NavLink} to="/category/create">
+                <i className="fas fa-folder-plus"></i> Add Category
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        )}
+
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink
