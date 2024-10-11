@@ -78,14 +78,14 @@ The backend API repository can be found <a href="https://petspace-api-195e436e05
 | auth      | user    | register for an account        | have a personal profile with a picture                                                           | SignUpForm<br>ProfilePage<br>ProfileEditForm |
 | auth      | user    | register for an account        | create, like and comment on posts                                                                | Post<br>PostPage<br>Comment                  |
 | auth      | user    | register for an account        | follow users                                                                                     | Profile<br>ProfilePage                       |
-| posts     | visitor | view a list of posts           | browse the most recent uploads                                                                   | PostsPage                                    |
+| posts     | visitor | view a list of posts           | browse the most recent uploads                                                                   | PostsPetPage                                    |
 | posts     | visitor | view an individual post        | see user feedback, i.e. likes and read comments                                                  | Post<br>PostPaget                            |
 | posts     | visitor | search a list of posts         | find a post by a specific artist or a title                                                      | PostsPage                                    |
 | posts     | visitor | scroll through a list of posts | browse the site more comfortably                                                                 | InfiniteScrollComponent                      |
 | posts     | user    | edit and delete my post        | correct or hide any mistakes                                                                     | PostEditForm<br>MoreDropdownMenu             |
 | posts     | user    | create a post                  | share my moments with others                                                                     | PostCreateForm                               |
-| posts     | user    | view liked posts               | go back often to my favourite posts                                                              | PostsPage                                    |
-| posts     | user    | view followed users' posts     | keep up with my favourite users' moments                                                         | PostsPage                                    |
+| posts     | user    | view liked posts               | go back often to my favourite posts                                                              | PostsPetPage                                    |
+| posts     | user    | view followed users' posts     | keep up with my favourite users' moments                                                         | PostsPetPage                                    |
 | likes     | user    | like a post                    | express my interest in someone's shared moment                                                   | Post like icon                               |
 | likes     | user    | unlike a post                  | express that my interest in someone's shared moment has faded away                               | Post (un) like icon                          |
 | likes     | user    | like a comment                    | express my interest in someone's shared opinion                                                   | Comment like icon                               |
