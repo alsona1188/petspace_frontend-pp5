@@ -55,6 +55,7 @@ function PostsPetPage({ message, filter = "" }) {
       {/* Display PopularProfiles on mobile */}
       <Col className="d-lg-none mb-1 pt-3">
         <PopularProfiles mobile />
+        
       </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
