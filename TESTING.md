@@ -10,10 +10,7 @@ Back to the [README](README.md)
 -   [ESlint Validator](#eslint-validation)
 -   [HTML Validator](#html-validation)
 -   [CSS Validator](#css-validation)
--   [Console Results](#console-results)
 -   [Lighthouse Results](#lighthouse)
-    -   [Desktop](#lighthouse-desktop)
-    -   [Mobile](#lighthouse-mobile)
 -   [Bugs / Issues](#bugs)
 
 <h1 id="introduction">Introduction</h1>
@@ -319,3 +316,44 @@ describe('Avatar renders', () => {
 -   All tests passed
 
 <a href="#top">Back to the top</a>
+
+<h1 id="eslint-validation">ESLint Validation</h1>
+
+<a href="#top">Back to the top</a>
+
+All validation fixes recommended by ESLint were fixed and the follwing rules added to the .eslintrc.json configuration file.
+The code now validates with ESLint
+
+```
+ "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "req|res|next|__" }],
+    "allowEmptyCatch": 0,
+    "no-undef": "off",
+    "react/display-name": "off"
+    }
+```
+<h1 id="html-validation">HTML Validation</h1>
+
+![HTML Validation Result](documentation/testing_image/html_validator.png)
+
+<h1 id="css-validation">CSS Validation</h1>
+
+![W3C CSS Validation Result](documentation/testing_image/css_validator.png)
+
+<h1 id="lightHouse">Lighthouse</h1>
+
+Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on Desktop and Mobile.
+
+![Lighthouse](documentation/testing_image/lighthouse.png)
+
+<h1 id="bugs">Bugs / Issues</h1>
+
+<a href="#top">Back to the top</a>
+
+Bug: Unable to create a post:
+solution: After contacting tutor support, we found out that the frontend database was not corresponding to the backend database even though was the same. I need to thank the support because they suggested to change the database, complete new. After that everything was working. 
+
+Back to the [README](README.md)
+
