@@ -353,7 +353,7 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 <a href="#top">Back to the top</a>
 
 Bug: Unable to create a post:
-solution: After contacting tutor support, we found out that the frontend database was not corresponding to the backend database even though was the same. I need to thank the support because they suggested to change the database, complete new. After that everything was working. 
+- solution: After contacting tutor support, we found out that the frontend database was not corresponding to the backend database even though was the same. I need to thank the support because they suggested to change the database, complete new. After that everything was working. 
 
 Back to the [README](README.md)
 
