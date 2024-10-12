@@ -348,7 +348,7 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 
 ![Lighthouse](documentation/testing_image/lighthouse.png)
 
-<h1 id="bugs">Bugs / Issues</h1>
+<h1 id="bugs">Bugs</h1>
 
 <a href="#top">Back to the top</a>
 

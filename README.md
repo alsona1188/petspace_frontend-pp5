@@ -228,7 +228,7 @@ Milestones were used to create sprints. There are 4 sprints each dated appropria
 
 -   Choose category
 
-<video width="600" height="250" controls> <source src="documentation/readme-image/choose_category.mp4" type="video/mp4"></video>
+<img src="documentation/readme-image/choose_category.png">
 
 -   Add a comment
 
