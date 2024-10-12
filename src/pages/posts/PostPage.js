@@ -11,6 +11,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
+import PopularPosts from "../../components/PopularPosts";
 
 function PostPage() {
   const { id } = useParams();
@@ -39,6 +41,16 @@ function PostPage() {
 
   return (
     <Row className="h-100">
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      {/* Display PopularProfiles on larger screens */}
+        <PopularProfiles />
+        <PopularPosts />
+      </Col>
+      {/* Display PopularProfiles on mobile */}
+      <Col className="d-lg-none mb-1 pt-3">
+        <PopularProfiles mobile />
+        
+      </Col>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
         <Post {...post.results[0]} setPosts={setPost} postPage />

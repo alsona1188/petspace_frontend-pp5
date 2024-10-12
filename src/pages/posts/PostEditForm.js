@@ -39,7 +39,7 @@ function PostEditForm() {
     };
 
     fetchCategories();
-  }, [])
+  }, []);
 
   useEffect(() => {
     const handleMount = async () => {

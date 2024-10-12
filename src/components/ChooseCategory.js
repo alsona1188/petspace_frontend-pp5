@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Form } from 'react-bootstrap';
 import appStyles from "../App.module.css";
-import styles from "../App.module.css"
+import styles from "../App.module.css";
 
 
 const ChooseCategory = ({ setCategory, mobile }) => {

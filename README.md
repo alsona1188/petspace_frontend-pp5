@@ -413,3 +413,153 @@ Custom components were created to enable the code and functionality to re-used t
 <h1 id="development">Testing</h1>
 
 <h2 id="testing-results">Automated Testing Results</h2>
+
+-   Automated Jest Testing results [HERE](TESTING.md#automated-testing)
+
+<h2 id="testing-results">Manual Testing Results</h2>
+
+-   Manual Testing results [HERE](TESTING.md#manual-testing)
+
+<h1 id="deployment">Deployment</h1>
+
+### This project was created on GitHub and edited in GitPod by carrying out the following:
+
+<ol>
+    <li>A new repository was created without a template</li>
+    <li>A meaningful name was given to my new repository and I selected 'Create Repository'</li>
+    <li>I then opened the repository on GitHub and clicked the 'Gitpod' button to build the GitPod workspace which would allow me to build and edit the code used to make the <em>PetSpace</em> app.</li>
+    <li>Version control was used throughout the project using the following commands in the terminal using Bash
+        <ul>
+            <li>git add . <strong>OR</strong> git add "file name" - to stage the changes and get them ready for being committed to the local repo.</li> 
+            <li>git commit -m "Description of the update" - to save the change and commit the change to the local repo</li>
+            <li>git push - to push all committed changes to the GitHub</li>
+            <li>git reset "commit hash" </li>
+            <li>git push -f - This was used to force changes through to the GitHub repo if either "commit --amend" or "git reset" were used</li>
+        </ul>
+    </li>
+
+## Heroku
+
+The project was deployed via <a href="https://id.heroku.com/login" target="_blank">Heroku</a>, and the live link can be found here: <a href="https://petspace-frontend-4974c05787c4.herokuapp.com/" target="_blank">PetSpace</a>
+
+Before deploying to Heroku I created the Procfile with web: serve -s build
+
+This project was deployed to Heroku using the Heroku CLI details below
+
+-   Login
+    To use the CLI you must log in to your Heroku account. To do this you will need to
+    enter the command heroku login -i in the terminal. It requires the email and
+    password you used to sign up. If you have enabled multi-factor authentication (a
+    recommended security practice) then instead of your password you need an API key.
+    To get the API key go to your account settings and scroll down to the section ‘API
+    Key’. Click reveal and copy that, then paste it into the password prompt.
+
+-   Creating A Heroku App
+    Now that you are logged in, the first thing is to create a new app. Heroku creates a
+    URL based on your app name, so it must be unique not only on your account, but
+    across the whole site. You may need to try a few different names. To create an app
+    use the following command, where myapp is the name of your app.
+
+-   Here the app heroku-cli-example has been created with an output of the website
+    URL. It also displays and sets the git remote repository which will be used to deploy.
+    By default the region will be set to the US. If you would prefer a server based in the
+    EU then you can specify the region with the flag EU.
+
+-   When you push code to Heroku it will look at the repository contents to decide how
+    to build the project. One of the factors taken into consideration is the package file.
+    With a React project the standard file is a package.json file, which will have the
+    list of packages needed to run the project. If this file is present it will build the project
+    using the React buildpack.
+
+## Deployment Steps On Heroku.
+
+-   In Heroku create a new app, give it a name and choose location.
+
+-   In the deploy tab, go to 'deployment method', choose 'Github'
+
+-   Search for the repository in Github that you want to connect and click on the connect button
+
+-   In the 'manual deploy' section click on 'deploy branch'
+
+-   The build log will run, when complete you will see a message saying 'build succeeded'
+
+-   An 'Open App' button will appear, click this to take you to your deployed app.
+
+-   You can enable automatic deploys in the 'deployment section' so each time you push your code to 'Github' your deployed app will be updated.
+
+## Github Local Deployment
+
+There are many ways to deploy the project locally on your own device. Forking, Cloning, GitHub Desktop and Zip Exctraction, the steps in these processes are outlined below:
+
+### Forking the GitHub repo
+
+If you want to make changes to the repo without affecting it, you can make a copy of it by 'Forking' it. This will make sure that the original repo remains unchanged.
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the repository <a href="https://github.com/alsona1188/petspace_frontend-pp5" target="_blank"><strong>HERE</strong></a></li>
+    <li>Select the 'Fork' button in the top right corner of the page (under your account image)</li>
+    <li>The repo has now been copied into your own repos and you can work on it in your chosen IDE</li>
+    <li>If you have any suggestions to make regards to the code to make the site better, you can put in a pull request</li>
+</ol>
+
+### Cloning the repo with GitPod
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the Repository <a href="https://github.com/alsona1188/petspace_frontend-pp5" target="_blank"><strong>HERE</strong></a></li>
+    <li>Select the 'Code' button above the file list on the right had side</li>
+    <li>Ensure HTTPS is selected and click the clipboard on the right of the URL to copy it</li>
+    <li>Open a new workspace in GitPod</li>
+    <li>In the bash terminal type 'git clone [copy url here from step 4]'</li>
+    <li>Press enter - the IDE will clone and download the repo</li>
+</ol>
+
+### Github Desktop
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the Repository <a href="https://github.com/alsona1188/petspace_frontend-pp5" target="_blank"><strong>HERE</strong></a></li>
+    <li>Select the 'Code' button above the file list on the right had side</li>
+    <li>Select 'Open with GitHub Desktop'</li>
+    <li>If you haven't already installed GitHub desktop application - you will need to follow the relevant steps to do this</li>
+    <li>The repo will then be copied locally onto your machine</li>
+</ol>
+
+### Download and extract the zip directly from GitHub
+
+<ol>
+    <li>Log in to your GitHub account</li>
+    <li>Navigate to the Repository <a href="https://github.com/alsona1188/petspace_frontend-pp5" target="_blank"><strong>HERE</strong></a></li>
+    <li>Select the 'Code' button above the file list on the right had side</li>
+    <li>Select 'Download Zip'</li>
+    <li>Once you have the Zip downloaded, open it with your prefered file decompression software</li>
+    <li>You can then drag and drop the files from the folder into your chosen IDE or view/edit them on your local machine</li>
+    <li>If you want to create a web-app from the repo please follow the instructions in "Project Deployment"</li>
+</ol>
+
+<a href="#top">Back to the top.</a>
+
+<h1 id="credits">Credits</h1>
+
+### I have listed some of the resources I used for inspiration and in researching how to create the PetSpace app.
+
+-   Code Institute "Moments" tutorial helped me setup the initial code for PetSpace.
+-   All the header images are from <a href="https://pixabay.com/" target="_blank"><strong>Pixabay</strong></a>.
+
+### These are some of the resources that helped me solve some of the issues encountered when developing the site and also provided some inspiration
+
+-   [W3Schools - React](https://www.w3schools.com/react/default.asp)
+-   [Stack Overflow](https://stackoverflow.com/) for various code snippets and solutions
+-   [React Documentation](https://reactjs.org/)
+-   [React Testing Jest](https://jestjs.io/docs/tutorial-react)
+-   [React Testing Jest Cheatsheet](https://devhints.io/jest)
+-   [React Social Media Site](https://www.youtube.com/watch?v=zM93yZ_8SvE)
+-   [React Social Media App Design](https://www.youtube.com/watch?v=FweHcYHkt9A)
+-   [Material UI](https://mui.com/)
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+This project was made possible due to the help & advice from my Code Institute mentor, Code Institute Slack community, code institute tutor, Stack Overflow community, my family and a lot of extensive Googling.
+
+<a href="#top">Back to the top.</a>
